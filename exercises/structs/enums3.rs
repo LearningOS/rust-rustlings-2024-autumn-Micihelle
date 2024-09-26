@@ -47,17 +47,17 @@ impl State {
         self.position = p;
     }
 
-    fn process(&mut self, message: Message) {    // Type 为 Message 的参数 message
+    fn process(&mut self, message: Message) {
         // TODO: create a match expression to process the different message
         // variants
         // Remember: When passing a tuple as a function argument, you'll need
         // extra parentheses: fn function((t, u, p, l, e))
-        // 对 message 进行模式匹配  if message == Message::ChangeColor , 从而直接修改state的值
         match message {
-            Message::ChangeColor(r,g,b) => self.change_color((r,g,b)), //结构体实例化方法
-            Message::Echo(text) => self.echo(text),  
-            Message::Move(point) => self.move_position(point),
-            Message::Quit => self.quit(),
+            Message::ChangeColor => (255, 0, 255),
+            Message::Echo => (String::from("hello world")),
+            Message::Move => (Point { x: 10, y: 15 }),
+            Message::Quit =>, "hello world"
+
         }
     }
 }

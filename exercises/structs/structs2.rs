@@ -5,7 +5,6 @@
 // Execute `rustlings hint structs2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 #[derive(Debug)]
 struct Order {
@@ -38,7 +37,17 @@ mod tests {
     fn your_order() {
         let order_template = create_order_template();
         // TODO: Create your own order using the update syntax and template above!
+        // create a new instance of a struct that includes most of the values from another instance, but changes some. 
         // let your_order =
+        let your_order = Order {
+            name: String::from("Hacker in Rust"),
+            year: order_template.year,   //use the same values from order_templates that we created in fn create_order_template()
+            made_by_phone: order_template.made_by_phone,    
+            made_by_mobile: order_template.made_by_mobile,
+            made_by_email: order_template.made_by_email,
+            item_number: order_template.item_number,
+            count: 1,
+        };
         assert_eq!(your_order.name, "Hacker in Rust");
         assert_eq!(your_order.year, order_template.year);
         assert_eq!(your_order.made_by_phone, order_template.made_by_phone);
